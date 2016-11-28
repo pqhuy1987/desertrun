@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E1EBB531CE88D6500B9FC7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1EBB521CE88D6500B9FC7E /* AppDelegate.swift */; };
+		1E1EBB551CE88D6500B9FC7E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1E1EBB541CE88D6500B9FC7E /* GameScene.sks */; };
+		1E1EBB571CE88D6500B9FC7E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1EBB561CE88D6500B9FC7E /* GameScene.swift */; };
+		1E1EBB591CE88D6500B9FC7E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1EBB581CE88D6500B9FC7E /* GameViewController.swift */; };
+		1E1EBB5C1CE88D6500B9FC7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1EBB5A1CE88D6500B9FC7E /* Main.storyboard */; };
+		1E1EBB5E1CE88D6500B9FC7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E1EBB5D1CE88D6500B9FC7E /* Assets.xcassets */; };
+		1E1EBB611CE88D6500B9FC7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1EBB5F1CE88D6500B9FC7E /* LaunchScreen.storyboard */; };
+		1E1EBB6C1CE88D6500B9FC7E /* DesertRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1EBB6B1CE88D6500B9FC7E /* DesertRunTests.swift */; };
+		1E1EBB771CE88D6500B9FC7E /* DesertRunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1EBB761CE88D6500B9FC7E /* DesertRunUITests.swift */; };
+		1E1EBB851CE88E1C00B9FC7E /* Ogre.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1E1EBB841CE88E1C00B9FC7E /* Ogre.atlas */; };
+		1E1EBB871CE88E2600B9FC7E /* Player.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1E1EBB861CE88E2600B9FC7E /* Player.atlas */; };
+		1E1EBB891CE88EF600B9FC7E /* Enemy.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1E1EBB881CE88EF600B9FC7E /* Enemy.atlas */; };
+		1E1EBB8B1CE88F2000B9FC7E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1EBB8A1CE88F2000B9FC7E /* Player.swift */; };
+		1E1EBB901CE88F2F00B9FC7E /* LevelUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1EBB8D1CE88F2F00B9FC7E /* LevelUnit.swift */; };
+		1E1EBB911CE88F2F00B9FC7E /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1EBB8E1CE88F2F00B9FC7E /* Object.swift */; };
+		1E1EBB931CE8929900B9FC7E /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1EBB921CE8929900B9FC7E /* Bullet.swift */; };
+		1E1EBB951CE8D20B00B9FC7E /* Explode.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1E1EBB941CE8D20B00B9FC7E /* Explode.atlas */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E1EBB681CE88D6500B9FC7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E1EBB471CE88D6500B9FC7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E1EBB4E1CE88D6500B9FC7E;
+			remoteInfo = DesertRun;
+		};
+		1E1EBB731CE88D6500B9FC7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E1EBB471CE88D6500B9FC7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E1EBB4E1CE88D6500B9FC7E;
+			remoteInfo = DesertRun;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E1EBB4F1CE88D6500B9FC7E /* DesertRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesertRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E1EBB521CE88D6500B9FC7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1E1EBB541CE88D6500B9FC7E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		1E1EBB561CE88D6500B9FC7E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		1E1EBB581CE88D6500B9FC7E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		1E1EBB5B1CE88D6500B9FC7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1E1EBB5D1CE88D6500B9FC7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1E1EBB601CE88D6500B9FC7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1E1EBB621CE88D6500B9FC7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E1EBB671CE88D6500B9FC7E /* DesertRunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesertRunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E1EBB6B1CE88D6500B9FC7E /* DesertRunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesertRunTests.swift; sourceTree = "<group>"; };
+		1E1EBB6D1CE88D6500B9FC7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E1EBB721CE88D6500B9FC7E /* DesertRunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesertRunUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E1EBB761CE88D6500B9FC7E /* DesertRunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesertRunUITests.swift; sourceTree = "<group>"; };
+		1E1EBB781CE88D6500B9FC7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E1EBB841CE88E1C00B9FC7E /* Ogre.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Ogre.atlas; sourceTree = "<group>"; };
+		1E1EBB861CE88E2600B9FC7E /* Player.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player.atlas; sourceTree = "<group>"; };
+		1E1EBB881CE88EF600B9FC7E /* Enemy.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy.atlas; sourceTree = "<group>"; };
+		1E1EBB8A1CE88F2000B9FC7E /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		1E1EBB8D1CE88F2F00B9FC7E /* LevelUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelUnit.swift; sourceTree = "<group>"; };
+		1E1EBB8E1CE88F2F00B9FC7E /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		1E1EBB921CE8929900B9FC7E /* Bullet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
+		1E1EBB941CE8D20B00B9FC7E /* Explode.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Explode.atlas; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E1EBB4C1CE88D6500B9FC7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E1EBB641CE88D6500B9FC7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E1EBB6F1CE88D6500B9FC7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E1EBB461CE88D6500B9FC7E = {
+			isa = PBXGroup;
+			children = (
+				1E1EBB511CE88D6500B9FC7E /* DesertRun */,
+				1E1EBB6A1CE88D6500B9FC7E /* DesertRunTests */,
+				1E1EBB751CE88D6500B9FC7E /* DesertRunUITests */,
+				1E1EBB501CE88D6500B9FC7E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1E1EBB501CE88D6500B9FC7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E1EBB4F1CE88D6500B9FC7E /* DesertRun.app */,
+				1E1EBB671CE88D6500B9FC7E /* DesertRunTests.xctest */,
+				1E1EBB721CE88D6500B9FC7E /* DesertRunUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E1EBB511CE88D6500B9FC7E /* DesertRun */ = {
+			isa = PBXGroup;
+			children = (
+				1E1EBB521CE88D6500B9FC7E /* AppDelegate.swift */,
+				1E1EBB541CE88D6500B9FC7E /* GameScene.sks */,
+				1E1EBB561CE88D6500B9FC7E /* GameScene.swift */,
+				1E1EBB921CE8929900B9FC7E /* Bullet.swift */,
+				1E1EBB8D1CE88F2F00B9FC7E /* LevelUnit.swift */,
+				1E1EBB8E1CE88F2F00B9FC7E /* Object.swift */,
+				1E1EBB8A1CE88F2000B9FC7E /* Player.swift */,
+				1E1EBB581CE88D6500B9FC7E /* GameViewController.swift */,
+				1E1EBB5A1CE88D6500B9FC7E /* Main.storyboard */,
+				1E1EBB941CE8D20B00B9FC7E /* Explode.atlas */,
+				1E1EBB881CE88EF600B9FC7E /* Enemy.atlas */,
+				1E1EBB841CE88E1C00B9FC7E /* Ogre.atlas */,
+				1E1EBB5D1CE88D6500B9FC7E /* Assets.xcassets */,
+				1E1EBB861CE88E2600B9FC7E /* Player.atlas */,
+				1E1EBB5F1CE88D6500B9FC7E /* LaunchScreen.storyboard */,
+				1E1EBB621CE88D6500B9FC7E /* Info.plist */,
+			);
+			path = DesertRun;
+			sourceTree = "<group>";
+		};
+		1E1EBB6A1CE88D6500B9FC7E /* DesertRunTests */ = {
+			isa = PBXGroup;
+			children = (
+				1E1EBB6B1CE88D6500B9FC7E /* DesertRunTests.swift */,
+				1E1EBB6D1CE88D6500B9FC7E /* Info.plist */,
+			);
+			path = DesertRunTests;
+			sourceTree = "<group>";
+		};
+		1E1EBB751CE88D6500B9FC7E /* DesertRunUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1E1EBB761CE88D6500B9FC7E /* DesertRunUITests.swift */,
+				1E1EBB781CE88D6500B9FC7E /* Info.plist */,
+			);
+			path = DesertRunUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E1EBB4E1CE88D6500B9FC7E /* DesertRun */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E1EBB7B1CE88D6500B9FC7E /* Build configuration list for PBXNativeTarget "DesertRun" */;
+			buildPhases = (
+				1E1EBB4B1CE88D6500B9FC7E /* Sources */,
+				1E1EBB4C1CE88D6500B9FC7E /* Frameworks */,
+				1E1EBB4D1CE88D6500B9FC7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DesertRun;
+			productName = DesertRun;
+			productReference = 1E1EBB4F1CE88D6500B9FC7E /* DesertRun.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1E1EBB661CE88D6500B9FC7E /* DesertRunTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E1EBB7E1CE88D6500B9FC7E /* Build configuration list for PBXNativeTarget "DesertRunTests" */;
+			buildPhases = (
+				1E1EBB631CE88D6500B9FC7E /* Sources */,
+				1E1EBB641CE88D6500B9FC7E /* Frameworks */,
+				1E1EBB651CE88D6500B9FC7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E1EBB691CE88D6500B9FC7E /* PBXTargetDependency */,
+			);
+			name = DesertRunTests;
+			productName = DesertRunTests;
+			productReference = 1E1EBB671CE88D6500B9FC7E /* DesertRunTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1E1EBB711CE88D6500B9FC7E /* DesertRunUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E1EBB811CE88D6500B9FC7E /* Build configuration list for PBXNativeTarget "DesertRunUITests" */;
+			buildPhases = (
+				1E1EBB6E1CE88D6500B9FC7E /* Sources */,
+				1E1EBB6F1CE88D6500B9FC7E /* Frameworks */,
+				1E1EBB701CE88D6500B9FC7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E1EBB741CE88D6500B9FC7E /* PBXTargetDependency */,
+			);
+			name = DesertRunUITests;
+			productName = DesertRunUITests;
+			productReference = 1E1EBB721CE88D6500B9FC7E /* DesertRunUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E1EBB471CE88D6500B9FC7E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = novalain;
+				TargetAttributes = {
+					1E1EBB4E1CE88D6500B9FC7E = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					1E1EBB661CE88D6500B9FC7E = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 1E1EBB4E1CE88D6500B9FC7E;
+					};
+					1E1EBB711CE88D6500B9FC7E = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 1E1EBB4E1CE88D6500B9FC7E;
+					};
+				};
+			};
+			buildConfigurationList = 1E1EBB4A1CE88D6500B9FC7E /* Build configuration list for PBXProject "DesertRun" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1E1EBB461CE88D6500B9FC7E;
+			productRefGroup = 1E1EBB501CE88D6500B9FC7E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E1EBB4E1CE88D6500B9FC7E /* DesertRun */,
+				1E1EBB661CE88D6500B9FC7E /* DesertRunTests */,
+				1E1EBB711CE88D6500B9FC7E /* DesertRunUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E1EBB4D1CE88D6500B9FC7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E1EBB871CE88E2600B9FC7E /* Player.atlas in Resources */,
+				1E1EBB951CE8D20B00B9FC7E /* Explode.atlas in Resources */,
+				1E1EBB851CE88E1C00B9FC7E /* Ogre.atlas in Resources */,
+				1E1EBB551CE88D6500B9FC7E /* GameScene.sks in Resources */,
+				1E1EBB891CE88EF600B9FC7E /* Enemy.atlas in Resources */,
+				1E1EBB611CE88D6500B9FC7E /* LaunchScreen.storyboard in Resources */,
+				1E1EBB5E1CE88D6500B9FC7E /* Assets.xcassets in Resources */,
+				1E1EBB5C1CE88D6500B9FC7E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E1EBB651CE88D6500B9FC7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E1EBB701CE88D6500B9FC7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E1EBB4B1CE88D6500B9FC7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E1EBB901CE88F2F00B9FC7E /* LevelUnit.swift in Sources */,
+				1E1EBB8B1CE88F2000B9FC7E /* Player.swift in Sources */,
+				1E1EBB571CE88D6500B9FC7E /* GameScene.swift in Sources */,
+				1E1EBB931CE8929900B9FC7E /* Bullet.swift in Sources */,
+				1E1EBB911CE88F2F00B9FC7E /* Object.swift in Sources */,
+				1E1EBB591CE88D6500B9FC7E /* GameViewController.swift in Sources */,
+				1E1EBB531CE88D6500B9FC7E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E1EBB631CE88D6500B9FC7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E1EBB6C1CE88D6500B9FC7E /* DesertRunTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E1EBB6E1CE88D6500B9FC7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E1EBB771CE88D6500B9FC7E /* DesertRunUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E1EBB691CE88D6500B9FC7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E1EBB4E1CE88D6500B9FC7E /* DesertRun */;
+			targetProxy = 1E1EBB681CE88D6500B9FC7E /* PBXContainerItemProxy */;
+		};
+		1E1EBB741CE88D6500B9FC7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E1EBB4E1CE88D6500B9FC7E /* DesertRun */;
+			targetProxy = 1E1EBB731CE88D6500B9FC7E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1E1EBB5A1CE88D6500B9FC7E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E1EBB5B1CE88D6500B9FC7E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1E1EBB5F1CE88D6500B9FC7E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E1EBB601CE88D6500B9FC7E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1E1EBB791CE88D6500B9FC7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1E1EBB7A1CE88D6500B9FC7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E1EBB7C1CE88D6500B9FC7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DesertRun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = novalain.DesertRun;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1E1EBB7D1CE88D6500B9FC7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DesertRun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = novalain.DesertRun;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1E1EBB7F1CE88D6500B9FC7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = DesertRunTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = novalain.DesertRunTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesertRun.app/DesertRun";
+			};
+			name = Debug;
+		};
+		1E1EBB801CE88D6500B9FC7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DesertRunTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = novalain.DesertRunTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesertRun.app/DesertRun";
+			};
+			name = Release;
+		};
+		1E1EBB821CE88D6500B9FC7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = DesertRunUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = novalain.DesertRunUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DesertRun;
+			};
+			name = Debug;
+		};
+		1E1EBB831CE88D6500B9FC7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DesertRunUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = novalain.DesertRunUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DesertRun;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E1EBB4A1CE88D6500B9FC7E /* Build configuration list for PBXProject "DesertRun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E1EBB791CE88D6500B9FC7E /* Debug */,
+				1E1EBB7A1CE88D6500B9FC7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E1EBB7B1CE88D6500B9FC7E /* Build configuration list for PBXNativeTarget "DesertRun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E1EBB7C1CE88D6500B9FC7E /* Debug */,
+				1E1EBB7D1CE88D6500B9FC7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E1EBB7E1CE88D6500B9FC7E /* Build configuration list for PBXNativeTarget "DesertRunTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E1EBB7F1CE88D6500B9FC7E /* Debug */,
+				1E1EBB801CE88D6500B9FC7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E1EBB811CE88D6500B9FC7E /* Build configuration list for PBXNativeTarget "DesertRunUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E1EBB821CE88D6500B9FC7E /* Debug */,
+				1E1EBB831CE88D6500B9FC7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E1EBB471CE88D6500B9FC7E /* Project object */;
+}
