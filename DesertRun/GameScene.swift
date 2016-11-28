@@ -52,7 +52,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var enemyShot:Bool = false;
     var deathObjectShot:Bool = false;
     
-    let playerStartingPos:CGPoint = CGPointMake(50, 0)
+    let playerStartingPos:CGPoint = CGPoint(x: 50, y: 0)
     var scoreLabel:SKLabelNode!;
     
     var score:Int = 0 {
@@ -61,9 +61,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         
-        self.backgroundColor = SKColor.whiteColor()
+        self.backgroundColor = SKColor.white
         screenWidth = self.view!.bounds.width
         screenHeight = self.view!.bounds.height
         
@@ -77,7 +77,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = CGVector(dx:-0.3, dy:-8.8)
         
         // Move origin to center
-        self.anchorPoint = CGPointMake(0.5, 0.5)
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         addChild(worldNode)
         
@@ -109,11 +109,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
         scoreLabel = SKLabelNode(fontNamed :"AmericanTypeWriter")
         scoreLabel.text = "Score: 0";
-        scoreLabel.fontColor = SKColor.blackColor();
-        scoreLabel.horizontalAlignmentMode = .Right;
+        scoreLabel.fontColor = SKColor.black;
+        scoreLabel.horizontalAlignmentMode = .right;
         
         //scoreLabel.position = worldNode.convertPoint(CGPointMake(-100, 50), fromNode: self)
-        scoreLabel.position = CGPointMake(-screenWidth/2 + 150, screenHeight/2 - 50);
+        scoreLabel.position = CGPoint(x: -screenWidth/2 + 150, y: screenHeight/2 - 50);
         
         print(scoreLabel.position);
         
@@ -129,16 +129,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         for i in 0 ..< 9{
             let texture:SKTexture = atlas.textureNamed( String(format: "ring_blast000%i", i+1))
-            atlasTextures.insert(texture, atIndex:i)
+            atlasTextures.insert(texture, at:i)
         }
         
         for i in 9 ..< 13{
             let texture:SKTexture = atlas.textureNamed( String(format: "ring_blast00%i", i+1))
-            atlasTextures.insert(texture, atIndex:i)
+            atlasTextures.insert(texture, at:i)
         }
         
-        let atlasAnimation = SKAction.animateWithTextures(atlasTextures, timePerFrame: 1.0/30, resize: true , restore:false )
-        bulletExplodeAction =  SKAction.repeatAction(atlasAnimation, count:1)
+        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/30, resize: true , restore:false )
+        bulletExplodeAction =  SKAction.repeat(atlasAnimation, count:1)
     }
     
     func setUpEnemyRunAnimation(){
@@ -148,12 +148,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         for i in 0 ..< 7{
             let texture:SKTexture = atlas.textureNamed( String(format: "bro4_run000%i", i+1))
-            atlasTextures.insert(texture, atIndex:i)
+            atlasTextures.insert(texture, at:i)
         }
         
         
-        let atlasAnimation = SKAction.animateWithTextures(atlasTextures, timePerFrame: 1.0/15, resize: true , restore:false )
-        enemyRunAction =  SKAction.repeatActionForever(atlasAnimation)
+        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/15, resize: true , restore:false )
+        enemyRunAction =  SKAction.repeatForever(atlasAnimation)
 
     }
     
@@ -164,16 +164,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         for i in 0 ..< 9{
             let texture:SKTexture = atlas.textureNamed( String(format: "bro4_defeated000%i", i+1))
-            atlasTextures.insert(texture, atIndex:i)
+            atlasTextures.insert(texture, at:i)
         }
         
         for i in 9 ..< 22{
             let texture:SKTexture = atlas.textureNamed( String(format: "bro4_defeated00%i", i+1))
-            atlasTextures.insert(texture, atIndex:i)
+            atlasTextures.insert(texture, at:i)
         }
         
-        let atlasAnimation = SKAction.animateWithTextures(atlasTextures, timePerFrame: 1.0/30, resize: true , restore:false )
-        enemyDieAction =  SKAction.repeatAction(atlasAnimation, count:1)
+        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/30, resize: true , restore:false )
+        enemyDieAction =  SKAction.repeat(atlasAnimation, count:1)
     }
     
     func setUpSwipeHandlers(){
@@ -182,15 +182,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.view!.addGestureRecognizer(tapRec);
         
         swipeRightRec.addTarget(self, action:#selector(GameScene.swipedRight))
-        swipeRightRec.direction = .Right
+        swipeRightRec.direction = .right
         self.view!.addGestureRecognizer(swipeRightRec)
         
         swipeUpRec.addTarget(self, action: #selector(GameScene.swipedUp))
-        swipeUpRec.direction = .Up
+        swipeUpRec.direction = .up
         self.view!.addGestureRecognizer(swipeUpRec)
         
         swipeDownRec.addTarget(self, action: #selector(GameScene.swipedDown))
-        swipeDownRec.direction = .Down
+        swipeDownRec.direction = .down
         self.view!.addGestureRecognizer(swipeDownRec)
         
     }
@@ -200,20 +200,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         resetLoopingBackground()
         
-        let move:SKAction = SKAction.moveByX(-loopingBG2.size.width, y: 0, duration: 20)
-        let moveBack:SKAction = SKAction.moveByX(loopingBG2.size.width, y: 0, duration: 0)
+        let move:SKAction = SKAction.moveBy(x: -loopingBG2.size.width, y: 0, duration: 20)
+        let moveBack:SKAction = SKAction.moveBy(x: loopingBG2.size.width, y: 0, duration: 0)
         let seq:SKAction = SKAction.sequence([move, moveBack])
-        let `repeat`:SKAction = SKAction.repeatActionForever(seq)
+        let `repeat`:SKAction = SKAction.repeatForever(seq)
         
-        loopingBG.runAction(`repeat`)
-        loopingBG2.runAction(`repeat`)
+        loopingBG.run(`repeat`)
+        loopingBG2.run(`repeat`)
         
     }
     
     func tap(){
         
         if(playerBullet == nil && thePlayer.shoot() == true){
-            playerBullet = Bullet(pos: CGPointMake(thePlayer.position.x + 50, thePlayer.position.y));
+            playerBullet = Bullet(pos: CGPoint(x: thePlayer.position.x + 50, y: thePlayer.position.y));
             worldNode.addChild(playerBullet!);
         }
         
@@ -240,7 +240,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func resetLevel(){
         
-        worldNode.enumerateChildNodesWithName("levelUnit" ) {
+        worldNode.enumerateChildNodes(withName: "levelUnit" ) {
             node, stop in
             node.removeFromParent()
         }
@@ -269,7 +269,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             levelUnit = LevelUnit(width:levelUnitWidth, height:levelUnitHeight, xPos: levelUnitCounter*levelUnitWidth, yPos:0, isFirst:false);
         }
         
-        levelUnitCounter++
+        levelUnitCounter += 1
         worldNode.addChild(levelUnit)
         
     }
@@ -278,9 +278,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         var nodeCount:Int = 0
         
-        worldNode.enumerateChildNodesWithName("levelUnit") {
+        worldNode.enumerateChildNodes(withName: "levelUnit") {
             node, stop in
-            let nodeLocation:CGPoint = self.convertPoint(node.position, fromNode: self.worldNode)
+            let nodeLocation:CGPoint = self.convert(node.position, from: self.worldNode)
             
             if ( nodeLocation.x < -(self.screenWidth / 2) - self.levelUnitWidth ) {
                 node.removeFromParent()
@@ -294,7 +294,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     // call before render each frame
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         
   
         // declare where next
@@ -327,16 +327,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     
-    func centerOnNode(node:SKNode) {
+    func centerOnNode(_ node:SKNode) {
         
         // convert to this camera
-        let cameraPositionInScene:CGPoint = self.convertPoint(node.position, fromNode: worldNode)
+        let cameraPositionInScene:CGPoint = self.convert(node.position, from: worldNode)
         worldNode.position = CGPoint(x: worldNode.position.x - cameraPositionInScene.x - screenWidth/2 + 100 , y:0 )
         
     }
     
     // Handle all the collision
-    func didBeginContact(contact: SKPhysicsContact) {
+    func didBegin(_ contact: SKPhysicsContact) {
         
         // bullet and whatever
         if(contact.bodyA.categoryBitMask == BodyType.bullet.rawValue || contact.bodyB.categoryBitMask == BodyType.bullet.rawValue){
@@ -356,7 +356,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 contact.bodyB.node!.physicsBody!.categoryBitMask = 0;
             
                 
-                contact.bodyB.node!.runAction(enemyDieAction!, completion: {
+                contact.bodyB.node!.run(enemyDieAction!, completion: {
                     contact.bodyB.node?.parent!.removeFromParent();
                     self.enemyShot = false;
                 });
@@ -374,7 +374,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 //enemyShot = true;
                 contact.bodyA.node!.physicsBody!.categoryBitMask = 0;
                 
-                contact.bodyA.node!.runAction(enemyDieAction!, completion: {
+                contact.bodyA.node!.run(enemyDieAction!, completion: {
                     contact.bodyA.node?.parent!.removeFromParent();
                     //self.enemyShot = false;
                 });
@@ -386,7 +386,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if(contact.bodyA.categoryBitMask == BodyType.bullet.rawValue){
                   
                     contact.bodyB.node!.physicsBody!.categoryBitMask = 0;
-                    contact.bodyB.node!.runAction(bulletExplodeAction!, completion:{
+                    contact.bodyB.node!.run(bulletExplodeAction!, completion:{
                         contact.bodyB.node!.removeFromParent();
                         //self.deathObjectShot = false;
                     })
@@ -398,7 +398,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     contact.bodyA.node!.physicsBody!.categoryBitMask = 0;
                     
-                    contact.bodyA.node!.runAction(bulletExplodeAction!, completion:{
+                    contact.bodyA.node!.run(bulletExplodeAction!, completion:{
                         contact.bodyA.node!.removeFromParent();
                         //self.deathObjectShot = false;
                     })
@@ -483,21 +483,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // switch body to non dynamic
         if (contact.bodyA.categoryBitMask == BodyType.ground.rawValue  && contact.bodyB.categoryBitMask == BodyType.deathObject.rawValue ) {
-            contact.bodyB.node?.physicsBody!.dynamic = false
+            contact.bodyB.node?.physicsBody!.isDynamic = false
         } else if (contact.bodyA.categoryBitMask == BodyType.deathObject.rawValue  && contact.bodyB.categoryBitMask == BodyType.ground.rawValue ) {
-            contact.bodyA.node?.physicsBody!.dynamic = false
+            contact.bodyA.node?.physicsBody!.isDynamic = false
         }
         
         // if the player hits the ground....
         if (contact.bodyA.categoryBitMask == BodyType.ground.rawValue  && contact.bodyB.categoryBitMask == BodyType.player.rawValue ) {
-            thePlayer.physicsBody?.dynamic = true
+            thePlayer.physicsBody?.isDynamic = true
             if ( thePlayer.isRunning == false && thePlayer.isShooting == false) {
                 thePlayer.startRun()
             }
             
         } else if (contact.bodyA.categoryBitMask == BodyType.player.rawValue  && contact.bodyB.categoryBitMask == BodyType.ground.rawValue ) {
             
-            thePlayer.physicsBody?.dynamic = true
+            thePlayer.physicsBody?.isDynamic = true
             if ( thePlayer.isRunning == false && thePlayer.isShooting == false)  {
                 thePlayer.startRun()
             }
@@ -526,7 +526,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             onPlatform = true
             currentPlatform =  contact.bodyB.node! as? SKSpriteNode
             
-            thePlayer.physicsBody?.dynamic = true
+            thePlayer.physicsBody?.isDynamic = true
             
             if ( thePlayer.isRunning == false && thePlayer.isShooting == false) {
                 thePlayer.startRun()
@@ -538,7 +538,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             onPlatform = true
             currentPlatform =  contact.bodyA.node! as? SKSpriteNode
             
-            thePlayer.physicsBody?.dynamic = true
+            thePlayer.physicsBody?.isDynamic = true
             
             if ( thePlayer.isRunning == false && thePlayer.isShooting == false) {
                 thePlayer.startRun()
@@ -549,7 +549,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     // Physics contact ends
-    func didEndContact(contact: SKPhysicsContact) {
+    func didEnd(_ contact: SKPhysicsContact) {
         
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
@@ -574,25 +574,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             loopingBG.removeAllActions()
             loopingBG2.removeAllActions()
             
-            thePlayer.physicsBody!.dynamic = false
+            thePlayer.physicsBody!.isDynamic = false
             
             // fade out plaeyer
             
-            let fadeOut:SKAction = SKAction.fadeAlphaTo(0, duration: 0.2)
-            let move:SKAction = SKAction.moveTo(playerStartingPos, duration: 0.0)
-            let block:SKAction = SKAction.runBlock(revivePlayer)
+            let fadeOut:SKAction = SKAction.fadeAlpha(to: 0, duration: 0.2)
+            let move:SKAction = SKAction.move(to: playerStartingPos, duration: 0.0)
+            let block:SKAction = SKAction.run(revivePlayer)
             let seq:SKAction = SKAction.sequence([fadeOut, move, block])
             
-            thePlayer.runAction(seq)
+            thePlayer.run(seq)
             
             // fade out BG
             
-            let fadeOutBG:SKAction = SKAction.fadeAlphaTo(0, duration: 0.2)
-            let blockBG:SKAction = SKAction.runBlock(resetLoopingBackground)
-            let fadeInBG:SKAction = SKAction.fadeAlphaTo(1, duration: 0.2)
+            let fadeOutBG:SKAction = SKAction.fadeAlpha(to: 0, duration: 0.2)
+            let blockBG:SKAction = SKAction.run(resetLoopingBackground)
+            let fadeInBG:SKAction = SKAction.fadeAlpha(to: 1, duration: 0.2)
             let seqBG:SKAction = SKAction.sequence([fadeOutBG, blockBG, fadeInBG])
-            loopingBG.runAction(seqBG)
-            loopingBG2.runAction(seqBG)
+            loopingBG.run(seqBG)
+            loopingBG2.run(seqBG)
             
             
         }
@@ -602,18 +602,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func revivePlayer() {
         
         //will fade out worldNode and reset the level with new units
-        let fadeOut:SKAction = SKAction.fadeAlphaTo(0, duration: 0.2)
-        let block:SKAction = SKAction.runBlock(resetLevel)
-        let fadeIn:SKAction = SKAction.fadeAlphaTo(1, duration: 0.2)
+        let fadeOut:SKAction = SKAction.fadeAlpha(to: 0, duration: 0.2)
+        let block:SKAction = SKAction.run(resetLevel)
+        let fadeIn:SKAction = SKAction.fadeAlpha(to: 1, duration: 0.2)
         let seq:SKAction = SKAction.sequence([fadeOut, block, fadeIn])
-        worldNode.runAction(seq)
+        worldNode.run(seq)
         
         // fade in player and revive
-        let wait:SKAction = SKAction.waitForDuration(1)
-        let fadeIn2:SKAction = SKAction.fadeAlphaTo(1, duration: 0.2)
-        let block2:SKAction = SKAction.runBlock(noLongerDead)
+        let wait:SKAction = SKAction.wait(forDuration: 1)
+        let fadeIn2:SKAction = SKAction.fadeAlpha(to: 1, duration: 0.2)
+        let block2:SKAction = SKAction.run(noLongerDead)
         let seq2:SKAction = SKAction.sequence([wait , fadeIn2, block2])
-        thePlayer.runAction(seq2)
+        thePlayer.run(seq2)
         
     }
     
@@ -624,15 +624,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         isDead = false
         thePlayer.startRun()
         startLoopingBackground()
-        thePlayer.physicsBody!.dynamic = true
+        thePlayer.physicsBody!.isDynamic = true
         
     }
     
     
     func resetLoopingBackground(){
         
-        loopingBG.position = CGPointMake(0, 0)
-        loopingBG2.position = CGPointMake(loopingBG2.size.width - 3, 0)
+        loopingBG.position = CGPoint(x: 0, y: 0)
+        loopingBG2.position = CGPoint(x: loopingBG2.size.width - 3, y: 0)
         
     }
     

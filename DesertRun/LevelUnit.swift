@@ -26,7 +26,7 @@ class LevelUnit:SKNode {
         super.init()
         
         zPosition = -1;
-        position = CGPointMake(xPos, yPos);
+        position = CGPoint(x: xPos, y: yPos);
         self.width = width;
         self.height = height;
         
@@ -49,17 +49,17 @@ class LevelUnit:SKNode {
             }
         }
         
-        let theSize:CGSize = CGSizeMake(width, height)
+        let theSize:CGSize = CGSize(width: width, height: height)
         let tex:SKTexture = SKTexture(imageNamed: imageName)
-        backgroundSprite = SKSpriteNode(texture: tex, color: SKColor.clearColor(), size: theSize)
+        backgroundSprite = SKSpriteNode(texture: tex, color: SKColor.clear, size: theSize)
         
         self.addChild(backgroundSprite)
         self.name = "levelUnit"
         //self.position = CGPointMake(backgroundSprite.size.width / 2, 0)
         
-        backgroundSprite.physicsBody = SKPhysicsBody(rectangleOfSize: backgroundSprite.size, center:CGPointMake(0, -backgroundSprite.size.height * 0.88))
+        backgroundSprite.physicsBody = SKPhysicsBody(rectangleOf: backgroundSprite.size, center:CGPoint(x: 0, y: -backgroundSprite.size.height * 0.88))
         
-        backgroundSprite.physicsBody!.dynamic = false
+        backgroundSprite.physicsBody!.isDynamic = false
         backgroundSprite.physicsBody!.restitution = 0
         
         if (type == LevelType.water) {

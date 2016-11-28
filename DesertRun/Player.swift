@@ -18,8 +18,8 @@ class Player: SKSpriteNode {
     var jumpAmount:CGFloat = 0
     var maxJump:CGFloat = 15
     var minSpeed:CGFloat = 6
-    var glideTime:NSTimeInterval = 2
-    var slideTime:NSTimeInterval = 0.5
+    var glideTime:TimeInterval = 2
+    var slideTime:TimeInterval = 0.5
     
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -28,11 +28,11 @@ class Player: SKSpriteNode {
     init (imageNamed:String) {
         
         let imageTexture = SKTexture(imageNamed: imageNamed)
-        super.init(texture: imageTexture, color:SKColor.clearColor(), size: imageTexture.size() )
+        super.init(texture: imageTexture, color:SKColor.clear, size: imageTexture.size() )
         
         //let body:SKPhysicsBody = SKPhysicsBody(circleOfRadius: imageTexture.size().width / 2.6, center:CGPointMake(0, -18))
         let body:SKPhysicsBody = SKPhysicsBody(circleOfRadius: imageTexture.size().width / 2.6);
-        body.dynamic = true
+        body.isDynamic = true
         body.affectedByGravity = true
         body.allowsRotation = false
         body.restitution = 0.0
@@ -72,16 +72,16 @@ class Player: SKSpriteNode {
         
         for i in 0 ..< 9{
             let texture:SKTexture = atlas.textureNamed( String(format: "bro3_walk000%i", i+1))
-            atlasTextures.insert(texture, atIndex:i)
+            atlasTextures.insert(texture, at:i)
         }
         
         for i in 9 ..< 14{
             let texture:SKTexture = atlas.textureNamed( String(format: "bro3_walk00%i", i+1))
-            atlasTextures.insert(texture, atIndex:i)
+            atlasTextures.insert(texture, at:i)
         }
         
-        let atlasAnimation = SKAction.animateWithTextures(atlasTextures, timePerFrame: 1.0/30, resize: true , restore:false )
-        runAction =  SKAction.repeatActionForever(atlasAnimation)
+        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/30, resize: true , restore:false )
+        runAction =  SKAction.repeatForever(atlasAnimation)
         
     }
     
@@ -92,16 +92,16 @@ class Player: SKSpriteNode {
         
         for i in 0 ..< 9{
             let texture:SKTexture = atlas.textureNamed( String(format: "bro3_walk_and_fire000%i", i+1))
-            atlasTextures.insert(texture, atIndex:i)
+            atlasTextures.insert(texture, at:i)
         }
         
         for i in 9 ..< 14{
             let texture:SKTexture = atlas.textureNamed( String(format: "bro3_walk_and_fire00%i", i+1))
-            atlasTextures.insert(texture, atIndex:i)
+            atlasTextures.insert(texture, at:i)
         }
         
-        let atlasAnimation = SKAction.animateWithTextures(atlasTextures, timePerFrame: 1.0/30, resize: true , restore:false )
-        fireAction =  SKAction.repeatAction(atlasAnimation, count:1)
+        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/30, resize: true , restore:false )
+        fireAction =  SKAction.repeat(atlasAnimation, count:1)
         
     }
     
@@ -114,11 +114,11 @@ class Player: SKSpriteNode {
         
         for i in 0 ..< 5 {
             let texture:SKTexture = atlas.textureNamed( String(format: "bro3_jump000%i", i+1))
-            atlasTextures.insert(texture, atIndex:i)
+            atlasTextures.insert(texture, at:i)
         }
         
-        let atlasAnimation = SKAction.animateWithTextures(atlasTextures, timePerFrame: 1.0/10, resize: true , restore:false )
-        jumpAction =  SKAction.repeatActionForever(atlasAnimation)
+        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/10, resize: true , restore:false )
+        jumpAction =  SKAction.repeatForever(atlasAnimation)
         
     }
     
@@ -131,11 +131,11 @@ class Player: SKSpriteNode {
         
         for i in 0 ..< 12 {
             let texture:SKTexture = atlas.textureNamed( String(format: "ogre_slide%i", i+1))
-            atlasTextures.insert(texture, atIndex:i)
+            atlasTextures.insert(texture, at:i)
         }
         
-        let atlasAnimation = SKAction.animateWithTextures(atlasTextures, timePerFrame: 1.0/20, resize: true , restore:false )
-        glideAction =  SKAction.repeatActionForever(atlasAnimation)
+        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/20, resize: true , restore:false )
+        glideAction =  SKAction.repeatForever(atlasAnimation)
         
     }
     
@@ -147,10 +147,10 @@ class Player: SKSpriteNode {
         isShooting = false;
         canSecondJump = true;
         
-        self.removeActionForKey("jumpKey")
-        self.removeActionForKey("glideKey")
-        self.removeActionForKey("shootKey")
-        self.runAction(runAction! , withKey:"runKey")
+        self.removeAction(forKey: "jumpKey")
+        self.removeAction(forKey: "glideKey")
+        self.removeAction(forKey: "shootKey")
+        self.run(runAction! , withKey:"runKey")
         
     }
     
@@ -161,8 +161,8 @@ class Player: SKSpriteNode {
         isJumping = false;
         isShooting = true;
         
-        self.removeActionForKey("runKey")
-        self.runAction(fireAction!, withKey:"shootKey")
+        self.removeAction(forKey: "runKey")
+        self.run(fireAction!, withKey:"shootKey")
         
     }
     
@@ -178,10 +178,10 @@ class Player: SKSpriteNode {
         if(!isShooting && !isGliding){
             
             startShoot();
-            let wait:SKAction = SKAction.waitForDuration(0.3);
-            let stop:SKAction = SKAction.runBlock(stopShoot);
+            let wait:SKAction = SKAction.wait(forDuration: 0.3);
+            let stop:SKAction = SKAction.run(stopShoot);
             let seq:SKAction = SKAction.sequence([wait, stop])
-            self.runAction(seq);
+            self.run(seq);
             
             return true;
        
@@ -193,8 +193,8 @@ class Player: SKSpriteNode {
     
     func startJump(){
         
-        self.removeActionForKey("runKey")
-        self.runAction(jumpAction!, withKey:"jumpKey" )
+        self.removeAction(forKey: "runKey")
+        self.run(jumpAction!, withKey:"jumpKey" )
         
         isGliding = false
         isRunning = false
@@ -257,9 +257,9 @@ class Player: SKSpriteNode {
         isRunning = false
         isGliding = true
         
-        self.removeActionForKey("runKey")
-        self.removeActionForKey("jumpKey")
-        self.runAction(glideAction!, withKey:"glideKey")
+        self.removeAction(forKey: "runKey")
+        self.removeAction(forKey: "jumpKey")
+        self.run(glideAction!, withKey:"glideKey")
         
     }
     
@@ -268,11 +268,11 @@ class Player: SKSpriteNode {
         
         if (isGliding == false && isJumping == true) {
             startGlide()
-            self.physicsBody?.dynamic = false
-            let wait:SKAction = SKAction.waitForDuration(glideTime)
-            let block:SKAction = SKAction.runBlock(stopGlide)
+            self.physicsBody?.isDynamic = false
+            let wait:SKAction = SKAction.wait(forDuration: glideTime)
+            let block:SKAction = SKAction.run(stopGlide)
             let seq:SKAction = SKAction.sequence([wait, block])
-            self.runAction(seq)
+            self.run(seq)
         } else {
             slide()
         }
@@ -282,7 +282,7 @@ class Player: SKSpriteNode {
     
     func stopGlide() {
         
-        self.physicsBody?.dynamic = true
+        self.physicsBody?.isDynamic = true
         self.startRun()
         
     }
@@ -294,11 +294,11 @@ class Player: SKSpriteNode {
             
             startGlide()
             isAttacking = true
-            let wait:SKAction = SKAction.waitForDuration( slideTime)
-            let block:SKAction = SKAction.runBlock(stopSlide)
+            let wait:SKAction = SKAction.wait( forDuration: slideTime)
+            let block:SKAction = SKAction.run(stopSlide)
             let seq:SKAction = SKAction.sequence([wait, block])
             
-            self.runAction(seq)
+            self.run(seq)
             
         }
         

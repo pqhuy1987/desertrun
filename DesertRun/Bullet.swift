@@ -24,7 +24,7 @@ class Bullet: SKNode {
         bulletSprite.physicsBody!.categoryBitMask = BodyType.bullet.rawValue
         bulletSprite.physicsBody!.contactTestBitMask = BodyType.wheelObject.rawValue | BodyType.deathObject.rawValue | BodyType.enemy.rawValue
         bulletSprite.physicsBody!.friction = 1
-        bulletSprite.physicsBody!.dynamic = true
+        bulletSprite.physicsBody!.isDynamic = true
         bulletSprite.physicsBody!.affectedByGravity = false
         bulletSprite.physicsBody!.restitution = 0
         bulletSprite.physicsBody!.allowsRotation = true
